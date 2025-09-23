@@ -188,7 +188,8 @@
 
     </div>
   </div>
-</header>
+  </header>
+
 <div class="h-16"></div>  <!--Div class for fixed header-->
 
 
@@ -211,7 +212,9 @@
   <img 
     src="/assets/images/hero-2k.png" 
     alt="Yọmí Adé" 
-    class="absolute inset-0 h-full w-full object-cover opacity-60">
+    class="absolute inset-0 h-full w-full object-cover opacity-60"
+    loading="lazy"
+    decoding="async">
   </picture>
 
     <div class="relative z-10 text-center px-6">
@@ -228,6 +231,41 @@
   <section id="music-grid" class="max-w-7xl mx-auto px-6 py-16">
     <h2 class="font-display text-2xl mb-8 text-center">Music</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+
+      <!-- Palm Wine Promises -->
+      <div class="bg-white/5 rounded-xl overflow-hidden shadow-lg">
+        <img src="/assets/images/PalmWinePromises.png" alt="Pieces Of Me (The EP) Cover Art" class="w-full aspect-square object-cover" />
+        <div class="p-4">
+          <p class="font-bold">Palm Wine Promises</p>
+
+          <!-- DROPDOWN LISTEN -->
+          <div x-data="{ open: false }" class="mt-3">
+            
+            <!-- Commented out button for future use, when the single is released 
+            <button @click="open = !open" 
+                    class="w-full flex justify-between items-center px-4 py-2 bg-black text-white rounded-md hover:bg-black/50 transform transition-colors "> 
+              Listen
+              <svg :class="{'rotate-180': open}" class="w-4 h-4 ml-2 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button> 
+            --> 
+            <!-- Active button for now -->
+            <button @click="open = !open" 
+                    class="w-full flex justify-between items-center px-4 py-2 bg-black text-white rounded-md hover:bg-black/50 transform transition-colors "> 
+              Coming Soon
+            </button>
+
+            <!-- Dropdown links 
+            <div x-show="open" x-collapse class="mt-2 bg-black/50 rounded-md shadow-inner p-3 space-y-2">
+              <a href="https://open.spotify.com" target="_blank" class="block px-3 py-2 bg-green-700 text-white rounded hover:bg-green-500 transform transition-colors">Spotify</a>
+              <a href="https://music.apple.com" target="_blank" class="block px-3 py-2 bg-red-700 text-white rounded hover:bg-red-500 transform transition-colors">Apple Music</a>
+            </div> 
+            -->
+          </div>
+        </div>
+      </div>
+
       
       <!-- Pieces of Me (The EP) -->
       <div class="bg-white/5 rounded-xl overflow-hidden shadow-lg">
@@ -279,11 +317,11 @@
         </div>
       </div>
 
-      <!-- Pieces of Me (The EP) -->
+      <!-- T2A (Thanks To AJ) -->
       <div class="bg-white/5 rounded-xl overflow-hidden shadow-lg">
-        <img src="/assets/images/T2A.png" alt="Pieces Of Me (The EP) Cover Art" class="w-full aspect-square object-cover" />
+        <img src="/assets/images/T2A.png" alt="T2A (Thanks To AJ) Cover Art" class="w-full aspect-square object-cover" />
         <div class="p-4">
-          <p class="font-bold">Pieces Of Me (The EP)</p>
+          <p class="font-bold">T2A (Thanks To AJ)</p>
 
           <!-- DROPDOWN LISTEN -->
           <div x-data="{ open: false }" class="mt-3">
@@ -304,11 +342,11 @@
         </div>
       </div>
 
-      <!-- Pieces of Me (The EP) -->
+      <!-- Told Me (Focus) -->
       <div class="bg-white/5 rounded-xl overflow-hidden shadow-lg">
-        <img src="/assets/images/TOLDMEFOCUS.PNG" alt="Pieces Of Me (The EP) Cover Art" class="w-full aspect-square object-cover" />
+        <img src="/assets/images/TOLDMEFOCUS.PNG" alt="Told Me (Focus) Cover Art" class="w-full aspect-square object-cover" />
         <div class="p-4">
-          <p class="font-bold">Pieces Of Me (The EP)</p>
+          <p class="font-bold">Told Me (Focus)</p>
 
           <!-- DROPDOWN LISTEN -->
           <div x-data="{ open: false }" class="mt-3">
@@ -329,11 +367,11 @@
         </div>
       </div>
 
-      <!-- Pieces of Me (The EP) -->
+      <!-- 10K Reasons -->
       <div class="bg-white/5 rounded-xl overflow-hidden shadow-lg">
-        <img src="/assets/images/10KReasons.png" alt="Pieces Of Me (The EP) Cover Art" class="w-full aspect-square object-cover" />
+        <img src="/assets/images/10KReasons.png" alt="10K Reasons Cover Art" class="w-full aspect-square object-cover" />
         <div class="p-4">
-          <p class="font-bold">Pieces Of Me (The EP)</p>
+          <p class="font-bold">10K Reasons</p>
 
           <!-- DROPDOWN LISTEN -->
           <div x-data="{ open: false }" class="mt-3">
@@ -354,11 +392,11 @@
         </div>
       </div>
 
-      <!-- Pieces of Me (The EP) -->
+      <!-- SETBACK -->
       <div class="bg-white/5 rounded-xl overflow-hidden shadow-lg">
-        <img src="/assets/images/SETBACK.JPG" alt="Pieces Of Me (The EP) Cover Art" class="w-full aspect-square object-cover" />
+        <img src="/assets/images/SETBACK.JPG" alt="SETBACK Cover Art" class="w-full aspect-square object-cover" />
         <div class="p-4">
-          <p class="font-bold">Pieces Of Me (The EP)</p>
+          <p class="font-bold">SETBACK</p>
 
           <!-- DROPDOWN LISTEN -->
           <div x-data="{ open: false }" class="mt-3">
@@ -379,11 +417,11 @@
         </div>
       </div>
 
-      <!-- Pieces of Me (The EP) -->
+      <!-- DARK SOUL -->
       <div class="bg-white/5 rounded-xl overflow-hidden shadow-lg">
-        <img src="/assets/images/DARKSOUL.jpg" alt="Pieces Of Me (The EP) Cover Art" class="w-full aspect-square object-cover" />
+        <img src="/assets/images/DARKSOUL.jpg" alt="DARK SOUL Cover Art" class="w-full aspect-square object-cover" />
         <div class="p-4">
-          <p class="font-bold">Pieces Of Me (The EP)</p>
+          <p class="font-bold">DARK SOUL</p>
 
           <!-- DROPDOWN LISTEN -->
           <div x-data="{ open: false }" class="mt-3">
@@ -404,11 +442,11 @@
         </div>
       </div>
 
-      <!-- Pieces of Me (The EP) -->
+      <!-- WAVES -->
       <div class="bg-white/5 rounded-xl overflow-hidden shadow-lg">
-        <img src="/assets/images/WAVES.jpg" alt="Pieces Of Me (The EP) Cover Art" class="w-full aspect-square object-cover" />
+        <img src="/assets/images/WAVES.jpg" alt="WAVES Cover Art" class="w-full aspect-square object-cover" />
         <div class="p-4">
-          <p class="font-bold">Pieces Of Me (The EP)</p>
+          <p class="font-bold">WAVES</p>
 
           <!-- DROPDOWN LISTEN -->
           <div x-data="{ open: false }" class="mt-3">
@@ -429,11 +467,11 @@
         </div>
       </div>
 
-      <!-- Pieces of Me (The EP) -->
+      <!-- INVASION -->
       <div class="bg-white/5 rounded-xl overflow-hidden shadow-lg">
-        <img src="/assets/images/INVASION.jpg" alt="Pieces Of Me (The EP) Cover Art" class="w-full aspect-square object-cover" />
+        <img src="/assets/images/INVASION.jpg" alt="INVASION Cover Art" class="w-full aspect-square object-cover" />
         <div class="p-4">
-          <p class="font-bold">Pieces Of Me (The EP)</p>
+          <p class="font-bold">INVASION</p>
 
           <!-- DROPDOWN LISTEN -->
           <div x-data="{ open: false }" class="mt-3">
@@ -454,11 +492,11 @@
         </div>
       </div>
 
-      <!-- Pieces of Me (The EP) -->
+      <!-- NOBODY -->
       <div class="bg-white/5 rounded-xl overflow-hidden shadow-lg">
-        <img src="/assets/images/NOBODY.jpg" alt="Pieces Of Me (The EP) Cover Art" class="w-full aspect-square object-cover" />
+        <img src="/assets/images/NOBODY.jpg" alt="NOBODY Cover Art" class="w-full aspect-square object-cover" />
         <div class="p-4">
-          <p class="font-bold">Pieces Of Me (The EP)</p>
+          <p class="font-bold">NOBODY</p>
 
           <!-- DROPDOWN LISTEN -->
           <div x-data="{ open: false }" class="mt-3">
@@ -479,11 +517,11 @@
         </div>
       </div>
 
-      <!-- Pieces of Me (The EP) -->
+      <!-- GHOST -->
       <div class="bg-white/5 rounded-xl overflow-hidden shadow-lg">
-        <img src="/assets/images/GHOST.jpg" alt="Pieces Of Me (The EP) Cover Art" class="w-full aspect-square object-cover" />
+        <img src="/assets/images/GHOST.jpg" alt="GHOST Cover Art" class="w-full aspect-square object-cover" />
         <div class="p-4">
-          <p class="font-bold">Pieces Of Me (The EP)</p>
+          <p class="font-bold">GHOST</p>
 
           <!-- DROPDOWN LISTEN -->
           <div x-data="{ open: false }" class="mt-3">
@@ -504,86 +542,11 @@
         </div>
       </div>
 
-      <!-- Pieces of Me (The EP) -->
+      <!-- ELEMENTS -->
       <div class="bg-white/5 rounded-xl overflow-hidden shadow-lg">
-        <img src="/assets/images/elements" alt="Pieces Of Me (The EP) Cover Art" class="w-full aspect-square object-cover" />
+        <img src="/assets/images/Elements.jpg" alt="ELEMENTS Cover Art" class="w-full aspect-square object-cover" />
         <div class="p-4">
-          <p class="font-bold">Pieces Of Me (The EP)</p>
-
-          <!-- DROPDOWN LISTEN -->
-          <div x-data="{ open: false }" class="mt-3">
-            <button @click="open = !open" 
-                    class="w-full flex justify-between items-center px-4 py-2 bg-black text-white rounded-md hover:bg-black/50 transform transition-colors ">
-              Listen
-              <svg :class="{'rotate-180': open}" class="w-4 h-4 ml-2 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-              </svg>
-            </button>
-
-            <!-- Dropdown links -->
-            <div x-show="open" x-collapse class="mt-2 bg-black/50 rounded-md shadow-inner p-3 space-y-2">
-              <a href="https://open.spotify.com" target="_blank" class="block px-3 py-2 bg-green-700 text-white rounded hover:bg-green-500 transform transition-colors">Spotify</a>
-              <a href="https://music.apple.com" target="_blank" class="block px-3 py-2 bg-red-700 text-white rounded hover:bg-red-500 transform transition-colors">Apple Music</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Pieces of Me (The EP) -->
-      <div class="bg-white/5 rounded-xl overflow-hidden shadow-lg">
-        <img src="/assets/images/PiecesofMe.jpg" alt="Pieces Of Me (The EP) Cover Art" class="w-full aspect-square object-cover" />
-        <div class="p-4">
-          <p class="font-bold">Pieces Of Me (The EP)</p>
-
-          <!-- DROPDOWN LISTEN -->
-          <div x-data="{ open: false }" class="mt-3">
-            <button @click="open = !open" 
-                    class="w-full flex justify-between items-center px-4 py-2 bg-black text-white rounded-md hover:bg-black/50 transform transition-colors ">
-              Listen
-              <svg :class="{'rotate-180': open}" class="w-4 h-4 ml-2 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-              </svg>
-            </button>
-
-            <!-- Dropdown links -->
-            <div x-show="open" x-collapse class="mt-2 bg-black/50 rounded-md shadow-inner p-3 space-y-2">
-              <a href="https://open.spotify.com" target="_blank" class="block px-3 py-2 bg-green-700 text-white rounded hover:bg-green-500 transform transition-colors">Spotify</a>
-              <a href="https://music.apple.com" target="_blank" class="block px-3 py-2 bg-red-700 text-white rounded hover:bg-red-500 transform transition-colors">Apple Music</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Pieces of Me (The EP) -->
-      <div class="bg-white/5 rounded-xl overflow-hidden shadow-lg">
-        <img src="/assets/images/PiecesofMe.jpg" alt="Pieces Of Me (The EP) Cover Art" class="w-full aspect-square object-cover" />
-        <div class="p-4">
-          <p class="font-bold">Pieces Of Me (The EP)</p>
-
-          <!-- DROPDOWN LISTEN -->
-          <div x-data="{ open: false }" class="mt-3">
-            <button @click="open = !open" 
-                    class="w-full flex justify-between items-center px-4 py-2 bg-black text-white rounded-md hover:bg-black/50 transform transition-colors ">
-              Listen
-              <svg :class="{'rotate-180': open}" class="w-4 h-4 ml-2 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-              </svg>
-            </button>
-
-            <!-- Dropdown links -->
-            <div x-show="open" x-collapse class="mt-2 bg-black/50 rounded-md shadow-inner p-3 space-y-2">
-              <a href="https://open.spotify.com" target="_blank" class="block px-3 py-2 bg-green-700 text-white rounded hover:bg-green-500 transform transition-colors">Spotify</a>
-              <a href="https://music.apple.com" target="_blank" class="block px-3 py-2 bg-red-700 text-white rounded hover:bg-red-500 transform transition-colors">Apple Music</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Pieces of Me (The EP) -->
-      <div class="bg-white/5 rounded-xl overflow-hidden shadow-lg">
-        <img src="/assets/images/PiecesofMe.jpg" alt="Pieces Of Me (The EP) Cover Art" class="w-full aspect-square object-cover" />
-        <div class="p-4">
-          <p class="font-bold">Pieces Of Me (The EP)</p>
+          <p class="font-bold">ELEMENTS</p>
 
           <!-- DROPDOWN LISTEN -->
           <div x-data="{ open: false }" class="mt-3">
