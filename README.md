@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # yomiade.com — Official Website
 
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
@@ -30,3 +31,7 @@ Built with **HTML, TailwindCSS, and vanilla JS**, deployed via **Cloudflare Page
 
 ---
 © Yọmí Adé. All rights reserved.
+=======
+# yomiade
+Yọmí Adé Official Artist Page 
+>>>>>>> 8075af7231612788d9ade59a4c563af516e34f27
