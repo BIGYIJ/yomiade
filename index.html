@@ -56,6 +56,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css" />
 
+<!-- Alpine.js for dropdown toggles -->
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+
 <!-- STRUCTURED DATA (JSON-LD) -->
   <script type="application/ld+json">
   {
@@ -84,7 +88,7 @@
 <body class="bg-black text-white font-body">
   <!-- HEADER -->
   <header class="fixed top-0 left-0 right-0 z-40 bg-black border-t-4 border-red-700">
-  <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+  <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between">
     
     <!-- LEFT NAV -->
     <nav class="flex gap-6 text-sm font-bold uppercase">
@@ -95,9 +99,9 @@
       
     </nav>
 
-    <!-- CENTER LOGO  -->
+    <!-- CENTER TEXT  -->
     <div class="text-center">
-      <img src="/assets/images/web-app-manifest-512x512.png" alt="Yọmí Adé Logo" class="h-10 w-10 mx-auto" />
+      <p class="uppercase tracking-[0.35em] text-xs md:text-sm text-white/70 mb-4">AfroFusion | Afro-HipHop | Melodic Rap</p>
     </div>
 
     <!-- RIGHT SOCIAL ICONS -->
@@ -189,26 +193,53 @@
 
 
   <!-- HERO -->
-  <section class="relative h-[88vh] flex items-center justify-center hero-bg overflow-hidden">
-    <img src="/assets/images/hero.jpg" alt="Yọmí Adé" class="absolute inset-0 h-full w-full object-cover opacity-60" />
+  <section class="relative h-[70vh] flex items-center justify-center hero-bg overflow-hidden">
+    <img src="/assets/images/hero.png" alt="Yọmí Adé" class="absolute inset-0 h-full w-full object-cover opacity-60" />
     <div class="relative z-10 text-center px-6">
-      <p class="uppercase tracking-[0.35em] text-xs md:text-sm text-white/70 mb-4">AfroFusion | Afro-HipHop | Melodic Rap</p>
-      <h1 class="font-display text-4xl md:text-6xl lg:text-7xl font-extrabold">Yọmí Adé</h1>
-      <p class="mt-4 text-white/80">New single: <span class="font-semibold">For You</span> w/ YungEmmy</p>
+      <img src="assets/images/ForYou.jpg" alt="For You Single Cover Art" class="mx-auto w-48 h-48 rounded-lg shadow-lg border-4 border-white/10" />
+      <p class="mt-4 text-white/80 font-semibold">Latest single: <span class="font-bold">For You</span> w/ Yung Emmy</p>
       <div class="mt-8 flex flex-wrap gap-3 justify-center">
         <a href="https://ffm.to/foryouyomiadeyungemmy" target="_blank" class="btn-primary">Listen Now</a>
-        <a href="#music" class="btn-secondary">Watch & Stream</a>
-        <a href="https://ffm.bio/yomiade" target="_blank" class="btn-outline">FeatureFM</a>
+        <!--<a href="https://ffm.bio/yomiade" target="_blank" class="btn-outline">FeatureFM</a>-->
       </div>
     </div>
   </section>
 
-  <!-- MUSIC -->
-  <section id="music" class="max-w-7xl mx-auto px-6 py-16">
-    <h2 class="font-display text-2xl mb-4">Latest Release</h2>
-    <p class="text-white/70 mb-6">Stream “For You” w/ YungEmmy</p>
-    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/6R2u7VVJLgKvXQwsj9Vmxe" width="100%" height="380" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  <!-- MUSIC GRID -->
+  <section id="music-grid" class="max-w-7xl mx-auto px-6 py-16">
+    <h2 class="font-display text-2xl mb-8 text-center">Music</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      
+      <!-- Pieces of Me (The EP) -->
+      <div class="bg-white/5 rounded-xl overflow-hidden shadow-lg">
+        <img src="/assets/images/PiecesofMe.jpg" alt="Pieces Of Me (The EP) Cover Art" class="w-full aspect-square object-cover" />
+        <div class="p-4">
+          <p class="font-bold">Pieces Of Me (The EP)</p>
+
+          <!-- DROPDOWN LISTEN -->
+          <div x-data="{ open: false }" class="mt-3">
+            <button @click="open = !open" 
+                    class="w-full flex justify-between items-center px-4 py-2 bg-black text-white rounded-md hover:bg-black/50 transition-colors duration-200 ">
+              Listen
+              <svg :class="{'rotate-180': open}" class="w-4 h-4 ml-2 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+
+            <!-- Dropdown links -->
+            <div x-show="open" x-collapse class="mt-2 bg-black/50 rounded-md shadow-inner p-3 space-y-2">
+              <a href="https://open.spotify.com" target="_blank" class="block px-3 py-2 bg-green-600 text-white rounded hover:bg-green-700">Spotify</a>
+              <a href="https://music.apple.com" target="_blank" class="block px-3 py-2 bg-pink-600 text-white rounded hover:bg-pink-700">Apple Music</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </section>
+
+
+
 
   <!-- ABOUT -->
   <section id="about" class="bg-white/5 py-16 px-6">
@@ -218,8 +249,13 @@
         <p class="text-white/80">Yọmí Adé blends raw lyricism and Yorùbá heritage into AfroFusion, Afro-HipHop, and Melodic Rap. Born in Philadelphia and raised in Canberra, his music bridges cultures and emotions.</p>
         <p class="text-white/60 mt-4">Contact: <a href="mailto:yomiademusic@gmail.com" class="underline">yomiademusic@gmail.com</a></p>
       </div>
-      <img src="/assets/images/about.jpg" alt="Yọmí Adé" class="rounded-xl border border-white/10" />
+      <img src="/assets/images/web-app-manifest-512x512.png" alt="Yọmí Adé Logo" class=" w-7 h-7 border border-white/10" />
     </div>
+  </section>
+
+  <!-- SPOTIFY EMBED -->
+  <section id="music" class="max-w-7xl mx-auto px-6 py-16">
+    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/6R2u7VVJLgKvXQwsj9Vmxe" width="100%" height="380" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
   </section>
 
   <!-- SOCIALS -->
@@ -240,6 +276,7 @@
     <p><a href="mailto:yomiademusic@gmail.com" class="text-brand">yomiademusic@gmail.com</a></p>
   </footer>
 
+    
   <script src="script.js"></script>
 </body>
 </html>
