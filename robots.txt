@@ -1,5 +1,17 @@
+# Global rules
 User-agent: *
 Disallow: /private/
 Allow: /
 
+# Social media crawlers for previews
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+# Sitemap
 Sitemap: https://yomiade.com/sitemap.xml
