@@ -23,3 +23,8 @@ To preview locally, clone this repo and open `index.html` in your browser.
 ```bash
 git clone https://github.com/BIGYIJ/yomiade.com.git
 cd yomiade.com
+
+© Yọmí Adé. All rights reserved. 
+======= 
+# yomiade 
+Yọmí Adé Official Artist Page
