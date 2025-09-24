@@ -195,25 +195,49 @@
 
   <!-- HERO -->
   <section class="relative h-[70vh] flex items-center justify-center hero-bg overflow-hidden">
+
   <picture>
-  <!-- For big screens (desktops / laptops) -->
+  <!-- Desktop / Large screens (WebP) -->
   <source 
     srcset="/assets/images/hero-4k.webp" 
     media="(min-width: 1024px)" 
     type="image/webp">
 
-  <!-- For tablets and mobile -->
+  <!-- Desktop / Large screens (PNG fallback) -->
+  <source 
+    srcset="/assets/images/hero-4k.png" 
+    media="(min-width: 1024px)" 
+    type="image/png">
+
+  <!-- Mobile Landscape (WebP) -->
   <source 
     srcset="/assets/images/hero-2k.webp" 
-    media="(max-width: 1023px)" 
+    media="(max-width: 1023px) and (orientation: landscape)" 
     type="image/webp">
 
-  <!-- Fallback (older browsers) -->
+  <!-- Mobile Landscape (PNG fallback) -->
+  <source 
+    srcset="/assets/images/hero-2k.png" 
+    media="(max-width: 1023px) and (orientation: landscape)" 
+    type="image/png">
+
+  <!-- Mobile Portrait (WebP) -->
+  <source 
+    srcset="/assets/images/hero-square-1280.webp" 
+    media="(max-width: 1023px) and (orientation: portrait)" 
+    type="image/webp">
+
+  <!-- Mobile Portrait (PNG fallback) -->
+  <source 
+    srcset="/assets/images/hero-square-1280.png" 
+    media="(max-width: 1023px) and (orientation: portrait)" 
+    type="image/png">
+
+  <!-- Fallback (older browsers with no webp support) -->
   <img 
     src="/assets/images/hero-2k.png" 
     alt="Yọmí Adé" 
     class="absolute inset-0 h-full w-full object-cover opacity-60"
-    loading="lazy"
     decoding="async">
   </picture>
 
