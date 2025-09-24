@@ -87,8 +87,8 @@
 </head>
 <body class="bg-black text-white font-body">
   <!-- HEADER -->
-  <header class="fixed top-0 left-0 right-0 z-40 bg-black border-t-4 border-red-700">
-  <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between">
+  <header class="fixed top-0 left-0 right-0 z-40 bg-black border-b-4 border-t-4 border-red-700">
+  <div class="max-w-7xl mx-auto px-3 py-4 flex flex-wrap items-center justify-between">
     
     <!-- LEFT NAV -->
     <nav class="flex gap-6 text-sm font-bold uppercase">
@@ -194,7 +194,7 @@
 
 
   <!-- HERO -->
-  <section class="relative h-[70vh] flex items-center justify-center hero-bg overflow-hidden">
+  <section class="relative h-[75vh] flex items-center justify-center hero-bg overflow-hidden">
 
   <picture>
   <!-- Desktop / Large screens (WebP) -->
@@ -241,15 +241,16 @@
     decoding="async">
   </picture>
 
-    <div class="relative z-10 text-center px-6">
-      <img src="assets/images/art/ForYou-1024.jpg" alt="For You Single Cover Art" class="mx-auto w-80 h-80 rounded-lg shadow-lg border-4 border-white/10" />
+  </section>
+
+  <!-- LATEST SINGLE -->
+  <div class="relative z-10 text-center px-6">
+      <img src="assets/images/art/ForYou-1024.jpg" alt="For You Single Cover Art" class="mx-auto w-85 h-85 rounded-lg shadow-lg border-4 border-white/10" />
       <p class="mt-4 text-white/80 font-semibold">Latest single: <span class="font-bold">For You</span> w/ Yung Emmy</p>
       <div class="mt-8 flex flex-wrap gap-3 justify-center">
         <a href="https://ffm.to/foryouyomiadeyungemmy" target="_blank" class="btn-primary">Listen Now</a>
-        <!--<a href="https://ffm.bio/yomiade" target="_blank" class="btn-outline">FeatureFM</a>-->
       </div>
     </div>
-  </section>
 
   <!-- MUSIC GRID -->
   <section id="music-grid" class="max-w-7xl mx-auto px-6 py-16">
@@ -598,14 +599,14 @@
 
 
   <!-- ABOUT -->
-  <section id="about" class="bg-white/5 py-16 px-6">
+  <section id="about" class="bg-white/5 py-10 px-6 border-b-4 border-t-4 border-red-700">
     <div class="flex-1 justify-center max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
       <div>
         <h2 class="font-display text-2xl mb-4">About</h2>
         <p class="text-white/80">Yọmí Adé blends raw lyricism and Yorùbá heritage into AfroFusion, Afro-HipHop, and Melodic Rap. Born in Philadelphia and raised in Canberra, his music bridges cultures and emotions.</p>
+        <img src="/assets/images/icons/about.jpg" alt="Fever Flow Icon" class=" w-24 h-24 border border-white/10" />
         <p class="text-white/60 mt-4">Contact: <a href="mailto:yomiademusic@gmail.com" class="underline">yomiademusic@gmail.com</a></p>
       </div>
-      <img src="/assets/images/icons/about.jpg" alt="Fever Flow Icon" class=" w-24 h-24 border border-white/10" />
     </div>
   </section>
 
@@ -614,20 +615,8 @@
     <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/6R2u7VVJLgKvXQwsj9Vmxe" width="100%" height="380" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
   </section>
 
-  <!-- SOCIALS -->
-  <section id="socials" class="max-w-7xl mx-auto px-6 py-16">
-    <h2 class="font-display text-2xl mb-6">Follow</h2>
-    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-      <a href="https://www.instagram.com/itsyomiade/" target="_blank" class="social-btn">Instagram</a>
-      <a href="https://x.com/itsyomiade" target="_blank" class="social-btn">Twitter / X</a>
-      <a href="https://www.tiktok.com/@iamyomiade" target="_blank" class="social-btn">TikTok</a>
-      <a href="https://www.facebook.com/iamyomiade/" target="_blank" class="social-btn">Facebook</a>
-      <a href="https://open.spotify.com/artist/6R2u7VVJLgKvXQwsj9Vmxe" target="_blank" class="social-btn">Spotify</a>
-    </div>
-  </section>
-
   <!-- FOOTER -->
-  <footer id="contact" class="bg-white/5 py-12 px-6 text-center">
+  <footer id="contact" class="bg-white/5 py-12 px-6 text-center border-b-4 border-t-4 border-red-700">
     <p>© <span id="year"></span> Yọmí Adé — AfroFusion | Afro-HipHop | Melodic Rap</p>
     <p><a href="mailto:yomiademusic@gmail.com" class="text-brand">yomiademusic@gmail.com</a></p>
   </footer>
