@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Yọmí Adé — Official Site (Yomi Ade)</title>
 <meta name="description" content="Yọmí Adé (also known as Yomi Ade) — AfroFusion | Afro-HipHop | Melodic Rap. Stream the latest release ‘For You’ w/ YungEmmy." />
-<meta name="keywords" content="Yọmí Adé, Yomi Ade, AfroFusion, Afro-HipHop, Melodic Rap, Nigerian Rapper, Canberra HipHop">
+<meta name="keywords" content="Yọmí Adé, Yomi Ade, yomiade, yomiademusic, Yomi Adé, Yọmí, Adé, Yọmí Adé Music,  AfroFusion, Afro-HipHop, Melodic Rap, Nigerian Rapper, Canberra HipHop">
 <meta name="author" content="Yọmí Adé" />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://yomiade.com/" />
@@ -85,28 +85,55 @@
   }
   </script>
 </head>
-<body class="bg-black text-white font-body">
+<body x-data="{ navOpen: false, socialOpen: false }" class="bg-black text-white font-body">
   <!-- HEADER -->
   <header class="fixed top-0 left-0 right-0 z-40 bg-black border-b-4 border-t-4 border-red-700">
-  <div class="max-w-7xl mx-auto px-3 py-4 flex flex-wrap items-center justify-between">
-    
-    <!-- LEFT NAV -->
-    <nav class="flex gap-6 text-sm font-bold uppercase">
-      <a href="#home" class="text-gray-300">Home</a>
-      <a href="#music" class="text-gray-300">Music</a>
-      <a href="#about" class="text-gray-300">About</a>
-      <a href="#store" class="text-gray-300">Store</a>
-      
+  <div class="max-w-7xl mx-auto px-3 py-4 flex flex wrap items-center justify-between">
+
+    <!-- Hamburger (visible on portrait/small screens only) -->
+    <button @click="navOpen = !navOpen" class="lg:hidden text-white">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+
+    <!-- Left Full nav (desktop / landscape) -->
+    <nav class="hidden lg:flex gap-6 text-sm font-bold uppercase">
+      <a href="#home" class="text-gray-300 hover:text-white">Home</a>
+      <a href="#music" class="text-gray-300 hover:text-white">Music</a>
+      <a href="#about" class="text-gray-300 hover:text-white">About</a>
+      <a href="#store" class="text-gray-300 hover:text-white">Store</a>
     </nav>
 
-    <!-- CENTER TEXT  -->
-    <div class="flex-1 flex items-center justify-center text-center transform translate-y-1.5">
-      <p class="uppercase tracking-[0.35em] text-xs md:text-sm text-white/70 mb-4">AfroFusion | Afro-HipHop | Melodic Rap</p>
+    <!-- Left Dropdown nav (mobile portrait) -->
+  <div x-show="navOpen" x-transition class="lg:hidden bg-black border-t border-white/10">
+    <a href="#home" class="block px-4 py-2 text-white hover:bg-white/10">Home</a>
+    <a href="#music" class="block px-4 py-2 text-white hover:bg-white/10">Music</a>
+    <a href="#about" class="block px-4 py-2 text-white hover:bg-white/10">About</a>
+    <a href="#store" class="block px-4 py-2 text-white hover:bg-white/10">Store</a>
+  </div>
+
+    <!-- Center Text -->
+    <div class="flex-1 text-center">
+      <p class="uppercase tracking-[0.35em] text-xs md:text-sm text-white/70">
+        AfroFusion | Afro-HipHop | Melodic Rap
+      </p>
     </div>
 
-    <!-- RIGHT SOCIAL ICONS -->
-    <div class="flex items-center gap-4">
-      <!-- Facebook -->
+    <!-- Social toggle (3 dots, only on mobile) -->
+    <button @click="socialOpen = !socialOpen" class="lg:hidden text-white">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+        <circle cx="4" cy="10" r="2"/>
+        <circle cx="10" cy="10" r="2"/>
+        <circle cx="16" cy="10" r="2"/>
+      </svg>
+    </button>
+
+
+    <!-- Right Nav - Social icons (desktop / landscape) -->
+    <div class="hidden lg:flex items-center gap-4">
+       <!-- Facebook -->
       <a href="https://www.facebook.com/iamyomiade/" target="_blank" rel="noopener noreferrer" class="text-gray-300">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 2 24 24"
              class="w-7 h-7" fill="currentColor" aria-labelledby="facebookTitle facebookDesc" role="img">
@@ -115,6 +142,7 @@
           <path d="M13.397 24v-9.294h3.115l.466-3.622h-3.581v-2.31c0-1.05.292-1.767 1.804-1.767h1.924V3.342c-.333-.045-1.477-.143-2.807-.143-2.776 0-4.676 1.695-4.676 4.809v2.682H7.337v3.622h2.305V24h3.755z"/>
         </svg>
       </a>
+    
 
       <!-- Instagram -->
       <a href="https://www.instagram.com/itsyomiade/" target="_blank" rel="noopener noreferrer" class="text-gray-300">
@@ -184,11 +212,195 @@
         <path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 2v.01L12 13 4 6.01V6h16zM4 18V8.236l7.386 6.157a1 1 0 001.228 0L20 8.236V18H4z"/>
       </svg>
     </a>
+    </div>
 
+  </div>
 
+  <!-- Right Dropdown socials (mobile portrait) -->
+  <div x-show="socialOpen" x-transition class="lg:hidden bg-black border-t border-white/10 flex justify-center gap-6 py-4">
+     <!-- Facebook -->
+      <a href="https://www.facebook.com/iamyomiade/" target="_blank" rel="noopener noreferrer" class="text-gray-300">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 2 24 24"
+             class="w-7 h-7" fill="currentColor" aria-labelledby="facebookTitle facebookDesc" role="img">
+          <title id="facebookTitle">Facebook</title>
+          <desc id="facebookDesc">Facebook logo</desc>
+          <path d="M13.397 24v-9.294h3.115l.466-3.622h-3.581v-2.31c0-1.05.292-1.767 1.804-1.767h1.924V3.342c-.333-.045-1.477-.143-2.807-.143-2.776 0-4.676 1.695-4.676 4.809v2.682H7.337v3.622h2.305V24h3.755z"/>
+        </svg>
+      </a>
+    
+
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/itsyomiade/" target="_blank" rel="noopener noreferrer" class="text-gray-300">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 47.41"
+             class="w-6 h-6" fill="currentColor" aria-labelledby="instagramTitle instagramDesc" role="img">
+          <title id="instagramTitle">Instagram</title>
+          <desc id="instagramDesc">Instagram logo</desc>
+          <path d="M23.91.36c3.69,0,7.36-.17,11,0,7.67.43,12.63,5.31,12.89,13,.24,7,.24,14,0,21-.25,7.94-5.22,12.91-13.12,13.17-7.05.24-14.13.25-21.18,0C5.5,47.26.7,42.73.28,34.75a214.41,214.41,0,0,1,0-21.81C.69,5.3,5.41.9,13.12.41c3.6-.22,7.2,0,10.79,0Zm-.08,43v0c3.81,0,7.64.21,11.4-.06,4.75-.33,7.86-3,8.09-7.71.38-7.75.34-15.54,0-23.29a7.38,7.38,0,0,0-7.39-7.41c-7.9-.34-15.82-.36-23.72,0C7.66,5,4.85,8,4.64,12.53,4.3,20,4.23,27.5,4.57,35c.24,5.32,3.37,8,8.68,8.35C16.77,43.49,20.3,43.33,23.83,43.33ZM36.31,24.05A12.32,12.32,0,1,1,24.14,11.78,12.32,12.32,0,0,1,36.31,24.05Zm-4.29,0A7.93,7.93,0,0,0,24.2,16h0A8,8,0,1,0,32,24.09v0ZM36.78,8.42a2.64,2.64,0,0,0-2.7,2.79A2.59,2.59,0,0,0,36.75,14a2.8,2.8,0,1,0,.37-5.58h-.34Z" transform="translate(0 -0.3)"/>
+        </svg>
+      </a>
+
+      <!-- X / Twitter -->
+      <a href="https://x.com/itsyomiade" target="_blank" rel="noopener noreferrer" class="text-gray-300">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1227"
+             class="w-6 h-6" fill="currentColor" aria-labelledby="twitterTitle twitterDesc" role="img">
+          <title id="twitterTitle">X (Twitter)</title>
+          <desc id="twitterDesc">X logo</desc>
+          <path d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z"/>
+        </svg>
+      </a>
+
+      <!-- YouTube -->
+      <a href="https://www.youtube.com/channel/UCDiTxncvm4swm_8oB1BH8-g" target="_blank" rel="noopener noreferrer" class="text-gray-300">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 34.34"
+             class="w-7 h-7" fill="currentColor" aria-labelledby="youTubeTitle youTubeDesc" role="img">
+          <title id="youTubeTitle">YouTube</title>
+          <desc id="youTubeDesc">YouTube logo</desc>
+          <path d="M39.27,7.17c-7.21-.46-23.24-.46-30.45,0C1,7.63-.11,11.41,0,24c0,12.36,1,16.37,8.7,16.83,7.21.46,23.24.46,30.56,0,7.9-.46,8.93-4.47,8.7-16.83S47.06,7.63,39.27,7.17Zm-22.21,25V15.87L34,24Z" transform="translate(0 -6.83)"/>
+        </svg>
+      </a>
+
+      <!-- TikTok -->
+      <a href="https://www.tiktok.com/@iamyomiade" target="_blank" rel="noopener noreferrer" class="text-gray-300">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-8 -1 79 74.63"
+             class="w-6 h-6" fill="currentColor" aria-labelledby="tiktokTitle tiktokDesc" role="img">
+          <title id="tiktokTitle">TikTok</title>
+          <desc id="tiktokDesc">TikTok logo</desc>
+          <path d="M46.58,0C47.81,10.59,53.72,16.9,64,17.58V29.49c-6,.58-11.17-1.37-17.24-5V46.73C46.76,75,15.91,83.87,3.5,63.59c-8-13.06-3.09-36,22.48-36.88V39.27a37.46,37.46,0,0,0-5.93,1.46c-5.69,1.92-8.91,5.53-8,11.89,1.73,12.18,24.07,15.78,22.21-8V0H46.58Z"/>
+        </svg>
+      </a>
+
+      <!-- Apple Music -->
+      <a href="https://music.apple.com/au/artist/y%E1%BB%8Dm%C3%AD-ad%C3%A9/1708090346" target="_blank" rel="noopener noreferrer" class="text-gray-300">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 361 361"
+             class="w-6 h-6" fill="currentColor" aria-labelledby="appleMusicTitle appleMusicDesc" role="img">
+          <title id="appleMusicTitle">Apple Music</title>
+          <desc id="appleMusicDesc">Apple Music logo</desc>
+          <path class="st0" d="M359.98,99.71c-0.02-3.62-0.06-7.24-0.16-10.86c-0.21-7.89-0.68-15.84-2.08-23.64    c-1.42-7.92-3.75-15.29-7.41-22.49c-3.6-7.07-8.3-13.53-13.91-19.14c-5.61-5.61-12.08-10.31-19.15-13.91    c-7.19-3.66-14.56-5.98-22.47-7.41c-7.8-1.4-15.76-1.87-23.65-2.08c-3.62-0.1-7.24-0.14-10.86-0.16C255.99,0,251.69,0,247.39,0    H112.61c-4.3,0-8.6,0-12.9,0.02c-3.62,0.02-7.24,0.06-10.86,0.16C80.96,0.4,73,0.86,65.2,2.27c-7.92,1.42-15.28,3.75-22.47,7.41    c-7.07,3.6-13.54,8.3-19.15,13.91c-5.61,5.61-10.31,12.07-13.91,19.14c-3.66,7.2-5.99,14.57-7.41,22.49    c-1.4,7.8-1.87,15.76-2.08,23.64c-0.1,3.62-0.14,7.24-0.16,10.86C0,104.01,0,108.31,0,112.61v134.77c0,4.3,0,8.6,0.02,12.9    c0.02,3.62,0.06,7.24,0.16,10.86c0.21,7.89,0.68,15.84,2.08,23.64c1.42,7.92,3.75,15.29,7.41,22.49    c3.6,7.07,8.3,13.53,13.91,19.14c5.61,5.61,12.08,10.31,19.15,13.91c7.19,3.66,14.56,5.98,22.47,7.41    c7.8,1.4,15.76,1.87,23.65,2.08c3.62,0.1,7.24,0.14,10.86,0.16c4.3,0.03,8.6,0.02,12.9,0.02h134.77c4.3,0,8.6,0,12.9-0.02    c3.62-0.02,7.24-0.06,10.86-0.16c7.89-0.21,15.85-0.68,23.65-2.08c7.92-1.42,15.28-3.74,22.47-7.41    c7.07-3.6,13.54-8.3,19.15-13.91c5.61-5.61,10.31-12.07,13.91-19.14c3.66-7.2,5.99-14.57,7.41-22.49    c1.4-7.8,1.87-15.76,2.08-23.64c0.1-3.62,0.14-7.24,0.16-10.86c0.03-4.3,0.02-8.6,0.02-12.9V112.61    C360,108.31,360,104.01,359.98,99.71z M263.54,234.26c0,4.56-0.04,8.7-1,13.26c-0.93,4.43-2.63,8.6-5.24,12.35    c-2.61,3.74-5.95,6.81-9.85,9.11c-3.95,2.33-8.08,3.66-12.5,4.55c-8.3,1.67-13.97,2.05-19.31,0.98c-5.14-1.03-9.5-3.4-12.99-6.6    c-5.17-4.74-8.39-11.14-9.09-17.82c-0.82-7.84,1.79-16.21,7.67-22.38c2.97-3.11,6.7-5.57,11.68-7.51    c5.21-2.02,10.96-3.23,19.8-5.01c2.33-0.47,4.66-0.94,6.99-1.41c3.06-0.62,5.69-1.4,7.81-3.99c2.13-2.61,2.17-5.78,2.17-8.92    l0-79.29c0-6.07-2.72-7.72-8.52-6.61c-4.14,0.81-93.09,18.75-93.09,18.75c-5.02,1.21-6.78,2.85-6.78,9.08l0,116.15    c0,4.56-0.24,8.7-1.19,13.26c-0.93,4.43-2.63,8.6-5.24,12.35c-2.61,3.74-5.95,6.81-9.85,9.11c-3.95,2.33-8.08,3.72-12.5,4.61    c-8.3,1.67-13.97,2.05-19.31,0.98c-5.14-1.03-9.5-3.47-12.99-6.66c-5.17-4.74-8.17-11.14-8.88-17.82    c-0.82-7.84,1.57-16.21,7.46-22.38c2.97-3.11,6.7-5.57,11.68-7.51c5.21-2.02,10.96-3.23,19.8-5.01c2.33-0.47,4.66-0.94,6.99-1.41    c3.06-0.62,5.69-1.4,7.81-3.99c2.12-2.59,2.37-5.64,2.37-8.76c0-24.6,0-133.92,0-133.92c0-1.8,0.15-3.02,0.24-3.62    c0.43-2.82,1.56-5.24,3.6-6.95c1.7-1.42,3.88-2.41,6.67-3l0.04-0.01l107-21.59c0.93-0.19,8.66-1.56,9.53-1.64    c5.78-0.5,9.03,3.3,9.03,9.46V234.26z" id="path5"></path>
+        </svg>
+      </a>
+
+      <!-- Spotify -->
+      <a href="https://open.spotify.com/artist/6R2u7VVJLgKvXQwsj9Vmxe" target="_blank" rel="noopener noreferrer" class="text-gray-300">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"
+             class="w-6 h-6" fill="currentColor" aria-labelledby="spotifyTitle spotifyDesc" role="img">
+          <title id="spotifyTitle">Spotify</title>
+          <desc id="spotifyDesc">Spotify logo</desc>
+          <path d="M24,0A24,24,0,1,0,48,24,24,24,0,0,0,24,0Zm11,34.62c-.43.58-1.45,1-2,.43-5.67-3.34-12.66-4.21-21.09-2.32a1.28,1.28,0,0,1-1.6-1.17,1.52,1.52,0,0,1,1-1.89c9.16-2,16.87-1.16,23.41,2.77A1.77,1.77,0,0,1,35.05,34.62ZM38,28.07a1.81,1.81,0,0,1-2.61.58,31.82,31.82,0,0,0-23.86-2.76,2,2,0,1,1-1.16-3.78,34.69,34.69,0,0,1,26.91,3.2A2.14,2.14,0,0,1,38,28.07Zm3.2-7.56a2.17,2.17,0,0,1-3,.87c-7.71-4.65-20.51-4.94-27.93-2.76-.14,0-.14.14-.29.14a2.31,2.31,0,0,1-1-4.51c8.58-2.61,22.55-2,31.57,3.2A2.06,2.06,0,0,1,41.16,20.51Z"/>
+        </svg>
+      </a>
+
+      <!-- Email -->
+      <a href="mailto:yomiademusic@gmail.com" class="text-gray-300">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"class="w-7 h-7" fill="currentColor" aria-labelledby="mailTitle mailDesc" role="img">
+        <title id="mailTitle">Email</title>
+        <desc id="mailDesc">Envelope icon</desc>
+        <path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 2v.01L12 13 4 6.01V6h16zM4 18V8.236l7.386 6.157a1 1 0 001.228 0L20 8.236V18H4z"/>
+      </svg>
+    </a>
+  </div>
+</header>
+
+    
+    <!-- LEFT NAV 
+    <nav class="flex gap-6 text-sm font-bold uppercase">
+      <a href="#home" class="text-gray-300">Home</a>
+      <a href="#music" class="text-gray-300">Music</a>
+      <a href="#about" class="text-gray-300">About</a>
+      <a href="#store" class="text-gray-300">Store</a>
+      
+    </nav> -->
+
+    <!-- CENTER TEXT  
+    <div class="flex-1 flex items-center justify-center text-center transform translate-y-1.5">
+      <p class="uppercase tracking-[0.35em] text-xs md:text-sm text-white/70 mb-4">AfroFusion | Afro-HipHop | Melodic Rap</p>
+    </div> -->
+
+    <!-- RIGHT SOCIAL ICONS 
+    <div class="flex items-center gap-4"> -->
+      <!-- Facebook 
+      <a href="https://www.facebook.com/iamyomiade/" target="_blank" rel="noopener noreferrer" class="text-gray-300">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 2 24 24"
+             class="w-7 h-7" fill="currentColor" aria-labelledby="facebookTitle facebookDesc" role="img">
+          <title id="facebookTitle">Facebook</title>
+          <desc id="facebookDesc">Facebook logo</desc>
+          <path d="M13.397 24v-9.294h3.115l.466-3.622h-3.581v-2.31c0-1.05.292-1.767 1.804-1.767h1.924V3.342c-.333-.045-1.477-.143-2.807-.143-2.776 0-4.676 1.695-4.676 4.809v2.682H7.337v3.622h2.305V24h3.755z"/>
+        </svg>
+      </a> -->
+    
+
+      <!-- Instagram 
+      <a href="https://www.instagram.com/itsyomiade/" target="_blank" rel="noopener noreferrer" class="text-gray-300">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 47.41"
+             class="w-6 h-6" fill="currentColor" aria-labelledby="instagramTitle instagramDesc" role="img">
+          <title id="instagramTitle">Instagram</title>
+          <desc id="instagramDesc">Instagram logo</desc>
+          <path d="M23.91.36c3.69,0,7.36-.17,11,0,7.67.43,12.63,5.31,12.89,13,.24,7,.24,14,0,21-.25,7.94-5.22,12.91-13.12,13.17-7.05.24-14.13.25-21.18,0C5.5,47.26.7,42.73.28,34.75a214.41,214.41,0,0,1,0-21.81C.69,5.3,5.41.9,13.12.41c3.6-.22,7.2,0,10.79,0Zm-.08,43v0c3.81,0,7.64.21,11.4-.06,4.75-.33,7.86-3,8.09-7.71.38-7.75.34-15.54,0-23.29a7.38,7.38,0,0,0-7.39-7.41c-7.9-.34-15.82-.36-23.72,0C7.66,5,4.85,8,4.64,12.53,4.3,20,4.23,27.5,4.57,35c.24,5.32,3.37,8,8.68,8.35C16.77,43.49,20.3,43.33,23.83,43.33ZM36.31,24.05A12.32,12.32,0,1,1,24.14,11.78,12.32,12.32,0,0,1,36.31,24.05Zm-4.29,0A7.93,7.93,0,0,0,24.2,16h0A8,8,0,1,0,32,24.09v0ZM36.78,8.42a2.64,2.64,0,0,0-2.7,2.79A2.59,2.59,0,0,0,36.75,14a2.8,2.8,0,1,0,.37-5.58h-.34Z" transform="translate(0 -0.3)"/>
+        </svg>
+      </a> -->
+
+      <!-- X / Twitter 
+      <a href="https://x.com/itsyomiade" target="_blank" rel="noopener noreferrer" class="text-gray-300">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1227"
+             class="w-6 h-6" fill="currentColor" aria-labelledby="twitterTitle twitterDesc" role="img">
+          <title id="twitterTitle">X (Twitter)</title>
+          <desc id="twitterDesc">X logo</desc>
+          <path d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z"/>
+        </svg>
+      </a> -->
+
+      <!-- YouTube 
+      <a href="https://www.youtube.com/channel/UCDiTxncvm4swm_8oB1BH8-g" target="_blank" rel="noopener noreferrer" class="text-gray-300">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 34.34"
+             class="w-7 h-7" fill="currentColor" aria-labelledby="youTubeTitle youTubeDesc" role="img">
+          <title id="youTubeTitle">YouTube</title>
+          <desc id="youTubeDesc">YouTube logo</desc>
+          <path d="M39.27,7.17c-7.21-.46-23.24-.46-30.45,0C1,7.63-.11,11.41,0,24c0,12.36,1,16.37,8.7,16.83,7.21.46,23.24.46,30.56,0,7.9-.46,8.93-4.47,8.7-16.83S47.06,7.63,39.27,7.17Zm-22.21,25V15.87L34,24Z" transform="translate(0 -6.83)"/>
+        </svg>
+      </a> -->
+
+      <!-- TikTok 
+      <a href="https://www.tiktok.com/@iamyomiade" target="_blank" rel="noopener noreferrer" class="text-gray-300">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-8 -1 79 74.63"
+             class="w-6 h-6" fill="currentColor" aria-labelledby="tiktokTitle tiktokDesc" role="img">
+          <title id="tiktokTitle">TikTok</title>
+          <desc id="tiktokDesc">TikTok logo</desc>
+          <path d="M46.58,0C47.81,10.59,53.72,16.9,64,17.58V29.49c-6,.58-11.17-1.37-17.24-5V46.73C46.76,75,15.91,83.87,3.5,63.59c-8-13.06-3.09-36,22.48-36.88V39.27a37.46,37.46,0,0,0-5.93,1.46c-5.69,1.92-8.91,5.53-8,11.89,1.73,12.18,24.07,15.78,22.21-8V0H46.58Z"/>
+        </svg>
+      </a> -->
+
+      <!-- Apple Music
+      <a href="https://music.apple.com/au/artist/y%E1%BB%8Dm%C3%AD-ad%C3%A9/1708090346" target="_blank" rel="noopener noreferrer" class="text-gray-300">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 361 361"
+             class="w-6 h-6" fill="currentColor" aria-labelledby="appleMusicTitle appleMusicDesc" role="img">
+          <title id="appleMusicTitle">Apple Music</title>
+          <desc id="appleMusicDesc">Apple Music logo</desc>
+          <path class="st0" d="M359.98,99.71c-0.02-3.62-0.06-7.24-0.16-10.86c-0.21-7.89-0.68-15.84-2.08-23.64    c-1.42-7.92-3.75-15.29-7.41-22.49c-3.6-7.07-8.3-13.53-13.91-19.14c-5.61-5.61-12.08-10.31-19.15-13.91    c-7.19-3.66-14.56-5.98-22.47-7.41c-7.8-1.4-15.76-1.87-23.65-2.08c-3.62-0.1-7.24-0.14-10.86-0.16C255.99,0,251.69,0,247.39,0    H112.61c-4.3,0-8.6,0-12.9,0.02c-3.62,0.02-7.24,0.06-10.86,0.16C80.96,0.4,73,0.86,65.2,2.27c-7.92,1.42-15.28,3.75-22.47,7.41    c-7.07,3.6-13.54,8.3-19.15,13.91c-5.61,5.61-10.31,12.07-13.91,19.14c-3.66,7.2-5.99,14.57-7.41,22.49    c-1.4,7.8-1.87,15.76-2.08,23.64c-0.1,3.62-0.14,7.24-0.16,10.86C0,104.01,0,108.31,0,112.61v134.77c0,4.3,0,8.6,0.02,12.9    c0.02,3.62,0.06,7.24,0.16,10.86c0.21,7.89,0.68,15.84,2.08,23.64c1.42,7.92,3.75,15.29,7.41,22.49    c3.6,7.07,8.3,13.53,13.91,19.14c5.61,5.61,12.08,10.31,19.15,13.91c7.19,3.66,14.56,5.98,22.47,7.41    c7.8,1.4,15.76,1.87,23.65,2.08c3.62,0.1,7.24,0.14,10.86,0.16c4.3,0.03,8.6,0.02,12.9,0.02h134.77c4.3,0,8.6,0,12.9-0.02    c3.62-0.02,7.24-0.06,10.86-0.16c7.89-0.21,15.85-0.68,23.65-2.08c7.92-1.42,15.28-3.74,22.47-7.41    c7.07-3.6,13.54-8.3,19.15-13.91c5.61-5.61,10.31-12.07,13.91-19.14c3.66-7.2,5.99-14.57,7.41-22.49    c1.4-7.8,1.87-15.76,2.08-23.64c0.1-3.62,0.14-7.24,0.16-10.86c0.03-4.3,0.02-8.6,0.02-12.9V112.61    C360,108.31,360,104.01,359.98,99.71z M263.54,234.26c0,4.56-0.04,8.7-1,13.26c-0.93,4.43-2.63,8.6-5.24,12.35    c-2.61,3.74-5.95,6.81-9.85,9.11c-3.95,2.33-8.08,3.66-12.5,4.55c-8.3,1.67-13.97,2.05-19.31,0.98c-5.14-1.03-9.5-3.4-12.99-6.6    c-5.17-4.74-8.39-11.14-9.09-17.82c-0.82-7.84,1.79-16.21,7.67-22.38c2.97-3.11,6.7-5.57,11.68-7.51    c5.21-2.02,10.96-3.23,19.8-5.01c2.33-0.47,4.66-0.94,6.99-1.41c3.06-0.62,5.69-1.4,7.81-3.99c2.13-2.61,2.17-5.78,2.17-8.92    l0-79.29c0-6.07-2.72-7.72-8.52-6.61c-4.14,0.81-93.09,18.75-93.09,18.75c-5.02,1.21-6.78,2.85-6.78,9.08l0,116.15    c0,4.56-0.24,8.7-1.19,13.26c-0.93,4.43-2.63,8.6-5.24,12.35c-2.61,3.74-5.95,6.81-9.85,9.11c-3.95,2.33-8.08,3.72-12.5,4.61    c-8.3,1.67-13.97,2.05-19.31,0.98c-5.14-1.03-9.5-3.47-12.99-6.66c-5.17-4.74-8.17-11.14-8.88-17.82    c-0.82-7.84,1.57-16.21,7.46-22.38c2.97-3.11,6.7-5.57,11.68-7.51c5.21-2.02,10.96-3.23,19.8-5.01c2.33-0.47,4.66-0.94,6.99-1.41    c3.06-0.62,5.69-1.4,7.81-3.99c2.12-2.59,2.37-5.64,2.37-8.76c0-24.6,0-133.92,0-133.92c0-1.8,0.15-3.02,0.24-3.62    c0.43-2.82,1.56-5.24,3.6-6.95c1.7-1.42,3.88-2.41,6.67-3l0.04-0.01l107-21.59c0.93-0.19,8.66-1.56,9.53-1.64    c5.78-0.5,9.03,3.3,9.03,9.46V234.26z" id="path5"></path>
+        </svg>
+      </a>  -->
+
+      <!-- Spotify 
+      <a href="https://open.spotify.com/artist/6R2u7VVJLgKvXQwsj9Vmxe" target="_blank" rel="noopener noreferrer" class="text-gray-300">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"
+             class="w-6 h-6" fill="currentColor" aria-labelledby="spotifyTitle spotifyDesc" role="img">
+          <title id="spotifyTitle">Spotify</title>
+          <desc id="spotifyDesc">Spotify logo</desc>
+          <path d="M24,0A24,24,0,1,0,48,24,24,24,0,0,0,24,0Zm11,34.62c-.43.58-1.45,1-2,.43-5.67-3.34-12.66-4.21-21.09-2.32a1.28,1.28,0,0,1-1.6-1.17,1.52,1.52,0,0,1,1-1.89c9.16-2,16.87-1.16,23.41,2.77A1.77,1.77,0,0,1,35.05,34.62ZM38,28.07a1.81,1.81,0,0,1-2.61.58,31.82,31.82,0,0,0-23.86-2.76,2,2,0,1,1-1.16-3.78,34.69,34.69,0,0,1,26.91,3.2A2.14,2.14,0,0,1,38,28.07Zm3.2-7.56a2.17,2.17,0,0,1-3,.87c-7.71-4.65-20.51-4.94-27.93-2.76-.14,0-.14.14-.29.14a2.31,2.31,0,0,1-1-4.51c8.58-2.61,22.55-2,31.57,3.2A2.06,2.06,0,0,1,41.16,20.51Z"/>
+        </svg>
+      </a> -->
+
+   <!--    Email 
+      <a href="mailto:yomiademusic@gmail.com" class="text-gray-300">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"class="w-7 h-7" fill="currentColor" aria-labelledby="mailTitle mailDesc" role="img">
+        <title id="mailTitle">Email</title>
+        <desc id="mailDesc">Envelope icon</desc>
+        <path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 2v.01L12 13 4 6.01V6h16zM4 18V8.236l7.386 6.157a1 1 0 001.228 0L20 8.236V18H4z"/>
+      </svg>
+    </a> -->
+
+<!--
     </div>
   </div>
-  </header>
+  </header>  -->
 
 <div class="h-16"></div>  <!--Div class for fixed header-->
 
