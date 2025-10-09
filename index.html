@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Yọmí Adé — Official Site (Yomi Ade)</title>
 <meta name="description" content="Yọmí Adé (also known as Yomi Ade) — AfroFusion | Afro-HipHop | Melodic Rap. Stream the latest release ‘For You’ w/ YungEmmy." />
-<meta name="keywords" content="Yọmí Adé, Yomi Ade, yomiade, yomiademusic, Yomi Adé, Yọmí, Adé, Yọmí Adé Music,  AfroFusion, Afro-HipHop, Melodic Rap, Nigerian Rapper, Canberra HipHop">
+<meta name="keywords" content="Yọmí Adé, Yomi Ade, yomiade, yomiademusic, Yomi Adé, Yọmí, Adé, Yọmí Adé Music, Yomi Adeyemi, AfroFusion, Afro-HipHop, Melodic Rap, Nigerian Rapper, Canberra HipHop">
 <meta name="author" content="Yọmí Adé" />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://yomiade.com/" />
@@ -78,7 +78,7 @@
       "https://soundcloud.com/yomiade",
       "https://x.com/itsyomiade",
       "https://www.instagram.com/itsyomiade/",
-      "https://www.tiktok.com/@iamyomiade",
+      "https://www.tiktok.com/@itsyomiade",
       "https://www.facebook.com/iamyomiade/"
     ],
     "email": "mailto:yomiademusic@gmail.com"
@@ -88,7 +88,16 @@
 <body x-data="{ navOpen: false, socialOpen: false }" class="bg-black text-white font-body">
   <!-- HEADER -->
   <header class="fixed top-0 left-0 right-0 z-40 bg-black border-b-4 border-t-4 border-red-700">
-  <div class="max-w-7xl mx-auto px-3 py-4 flex flex wrap items-center justify-between">
+  <!-- Page dimmer when any menu is open -->
+<div
+  x-cloak
+  x-show="navOpen || socialOpen"
+  @click="navOpen=false; socialOpen=false"
+  x-transition.opacity
+  class="fixed inset-0 z-30 bg-black/50 lg:hidden"
+></div>
+
+  <div class="max-w-7xl mx-auto px-3 py-4 flex flex-wrap items-center justify-between">
 
     <!-- Hamburger (visible on portrait/small screens only) -->
     <button @click="navOpen = !navOpen" class="lg:hidden text-white">
@@ -97,6 +106,9 @@
               d="M4 6h16M4 12h16M4 18h16"/>
       </svg>
     </button>
+
+
+
 
     <!-- Left Full nav (desktop / landscape) -->
     <nav class="hidden lg:flex gap-6 text-sm font-bold uppercase">
@@ -107,12 +119,25 @@
     </nav>
 
     <!-- Left Dropdown nav (mobile portrait) -->
-  <div x-show="navOpen" x-transition class="lg:hidden bg-black border-t border-white/10">
-    <a href="#home" class="block px-4 py-2 text-white hover:bg-white/10">Home</a>
-    <a href="#music" class="block px-4 py-2 text-white hover:bg-white/10">Music</a>
-    <a href="#about" class="block px-4 py-2 text-white hover:bg-white/10">About</a>
-    <a href="#store" class="block px-4 py-2 text-white hover:bg-white/10">Store</a>
-  </div>
+<div
+  x-cloak
+  x-show="navOpen"
+  @keydown.escape.window="navOpen=false"
+  @click.away="navOpen=false"
+  x-transition:enter="transition ease-out duration-200"
+  x-transition:enter-start="opacity-0 -translate-y-2"
+  x-transition:enter-end="opacity-100 translate-y-0"
+  x-transition:leave="transition ease-in duration-150"
+  x-transition:leave-start="opacity-100 translate-y-0"
+  x-transition:leave-end="opacity-0 -translate-y-2"
+  class="lg:hidden bg-black/95 backdrop-blur border-t border-white/10"
+>
+  <a @click="navOpen=false" href="#home"  class="block px-4 py-3 text-white hover:bg-white/10">Home</a>
+  <a @click="navOpen=false" href="#music" class="block px-4 py-3 text-white hover:bg-white/10">Music</a>
+  <a @click="navOpen=false" href="#about" class="block px-4 py-3 text-white hover:bg-white/10">About</a>
+  <a @click="navOpen=false" href="#store" class="block px-4 py-3 text-white hover:bg-white/10">Store</a>
+</div>
+
 
     <!-- Center Text -->
     <div class="flex-1 text-center">
@@ -175,7 +200,7 @@
       </a>
 
       <!-- TikTok -->
-      <a href="https://www.tiktok.com/@iamyomiade" target="_blank" rel="noopener noreferrer" class="text-gray-300">
+      <a href="https://www.tiktok.com/@itsyomiade" target="_blank" rel="noopener noreferrer" class="text-gray-300">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="-8 -1 79 74.63"
              class="w-6 h-6" fill="currentColor" aria-labelledby="tiktokTitle tiktokDesc" role="img">
           <title id="tiktokTitle">TikTok</title>
@@ -217,7 +242,19 @@
   </div>
 
   <!-- Right Dropdown socials (mobile portrait) -->
-  <div x-show="socialOpen" x-transition class="lg:hidden bg-black border-t border-white/10 flex justify-center gap-6 py-4">
+  <div
+  x-cloak
+  x-show="socialOpen"
+  @keydown.escape.window="socialOpen=false"
+  @click.away="socialOpen=false"
+  x-transition:enter="transition ease-out duration-200"
+  x-transition:enter-start="opacity-0 -translate-y-2"
+  x-transition:enter-end="opacity-100 translate-y-0"
+  x-transition:leave="transition ease-in duration-150"
+  x-transition:leave-start="opacity-100 translate-y-0"
+  x-transition:leave-end="opacity-0 -translate-y-2"
+  class="lg:hidden bg-black/95 backdrop-blur border-t border-white/10 flex justify-center gap-6 py-4"
+>
      <!-- Facebook -->
       <a href="https://www.facebook.com/iamyomiade/" target="_blank" rel="noopener noreferrer" class="text-gray-300">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 2 24 24"
@@ -260,7 +297,7 @@
       </a>
 
       <!-- TikTok -->
-      <a href="https://www.tiktok.com/@iamyomiade" target="_blank" rel="noopener noreferrer" class="text-gray-300">
+      <a href="https://www.tiktok.com/@itsyomiade" target="_blank" rel="noopener noreferrer" class="text-gray-300">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="-8 -1 79 74.63"
              class="w-6 h-6" fill="currentColor" aria-labelledby="tiktokTitle tiktokDesc" role="img">
           <title id="tiktokTitle">TikTok</title>
