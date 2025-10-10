@@ -2,21 +2,24 @@ html {
   scroll-behavior: smooth;
 }
 
-
 body { 
-    font-family: 'Georgia', 'Times New Roman', 'Times', 'serif';
-    background: black; 
-    color: white; 
-    }
+  font-family: 'Georgia', 'Times New Roman', 'Times', 'serif';
+  background: black; 
+  color: white; 
+}
 
 .font-display { 
-    font-family: Georgia, 'Times New Roman', Times, serif
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 /* Red Gradient Overlay for Hero Section */
-/*.hero-bg:before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(238, 3, 3, 0.55), rgba(0,0,0,.85)); pointer-events: none; }*/
-.hero-bg:before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0, 0, 0, 0.55), rgba(0,0,0,.85)); pointer-events: none; }
-
+.hero-bg:before { 
+  content: ''; 
+  position: absolute; 
+  inset: 0; 
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.55), rgba(0,0,0,.85)); 
+  pointer-events: none; 
+}
 
 img {
   max-width: 100%;
@@ -28,13 +31,27 @@ header a {
 }
 header a:hover {
   color: white;
-    transition: color 0.3s;
+  transition: color 0.3s;
 }
 
 [x-cloak] { 
   display: none !important; 
 }
 
-@media (prefers-reduced-motion: reduce){
-  * { transition-duration: 0.001ms !important; animation-duration: 0.001ms !important; }
+/* Respect reduced motion users */
+@media (prefers-reduced-motion: reduce) {
+  * { 
+    transition-duration: 0.001ms !important; 
+    animation-duration: 0.001ms !important; 
+  }
+}
+
+/*Proper fade-in animation */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1.2s ease-out forwards;
 }
