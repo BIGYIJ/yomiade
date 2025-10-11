@@ -117,7 +117,7 @@
 
 <body x-data="{ navOpen: false, socialOpen: false }" class="bg-black text-white font-body">
   <!-- HEADER -->
-  <header class="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-red-700 via-white/60 to-red-700 animate-pulse">
+  <header class="fixed top-0 left-0 right-0 z-40 bg-black border-b-4 border-red-700">
     
   <!-- Page dimmer when any menu is open -->
   <div
@@ -366,8 +366,7 @@
       </svg>
     </a>
   </div>
-  <!-- Gradient Divider (Top Shimmer) -->
-  <div></div>
+  
 </header>
 
 <div class="h-16"></div>  <!--Div class for fixed header-->
@@ -783,7 +782,7 @@
 
   <!-- ABOUT -->
 
-<section class="relative bg-white/5 py-16 px-8 border-b-4 border-t-4 border-red-700 overflow-hidden">
+<section class="relative bg-white/5 py-16 px-8  overflow-hidden">
   <!-- Gradient Divider (Top Shimmer) -->
   <div class="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-red-700 via-white/60 to-red-700 animate-pulse"></div>
 
