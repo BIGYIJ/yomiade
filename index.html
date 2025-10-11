@@ -116,17 +116,16 @@
 </head>
 
 <body x-data="{ navOpen: false, socialOpen: false }" class="bg-black text-white font-body">
-  <!-- HEADER -->
-  <header class="fixed top-0 left-0 right-0 z-40 bg-black border-b-4 border-red-700">
-    
-  <!-- Page dimmer when any menu is open -->
+  <!-- Page dimmer overlay when any menu is open -->
   <div
     x-cloak
     x-show="navOpen || socialOpen"
     @click="navOpen=false; socialOpen=false"
     x-transition.opacity
-    class="fixed inset-0 z-30 bg-black/50 lg:hidden">
+    class="fixed inset-0 z-40 bg-black/50 lg:hidden">
   </div>
+  <!-- HEADER -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-black border-b-4 border-red-700 relative">
 
   <div class="max-w-7xl mx-auto px-3 py-4 flex flex-wrap items-center justify-between">
 
@@ -263,12 +262,12 @@
     x-transition:leave="transition ease-in duration-150"
     x-transition:leave-start="opacity-100 translate-y-0"
     x-transition:leave-end="opacity-0 -translate-y-2"
-    class="lg:hidden bg-black/95 backdrop-blur border-t border-white/10 flex justify-center gap-6 py-4"
+    class="lg:hidden bg-black/95 backdrop-blur border-t border-white/10 flex justify-center gap-6 py-4 z-60"
   >
 
-    <a @click="navOpen=false" href="#home"  class="text-white text-sm font-semibold uppercase tracking-wide hover:text-red-500 transition-colors">Home</a>
-    <a @click="navOpen=false" href="#music" class="text-white text-sm font-semibold uppercase tracking-wide hover:text-red-500 transition-colors">Music</a>
-    <a @click="navOpen=false" href="#about" class="text-white text-sm font-semibold uppercase tracking-wide hover:text-red-500 transition-colors">About</a>
+    <a @click="navOpen=false" href="#home"  class="text-white/80 text-sm font-semibold uppercase tracking-wide hover:text-white transition-colors">Home</a>
+    <a @click="navOpen=false" href="#music" class="text-white/80 text-sm font-semibold uppercase tracking-wide hover:text-white transition-colors">Music</a>
+    <a @click="navOpen=false" href="#about" class="text-white/80 text-sm font-semibold uppercase tracking-wide hover:text-white transition-colors">About</a>
     <!--<a @click="navOpen=false" href="#store" class="text-white text-sm font-semibold uppercase tracking-wide hover:text-red-500 transition-colors">Store</a>-->
   </div>
 
@@ -284,8 +283,9 @@
     x-transition:leave="transition ease-in duration-150"
     x-transition:leave-start="opacity-100 translate-y-0"
     x-transition:leave-end="opacity-0 -translate-y-2"
-    class="lg:hidden bg-black/95 backdrop-blur border-t border-white/10 flex justify-center gap-6 py-4"
+    class="lg:hidden bg-black/95 backdrop-blur border-t border-white/10 flex justify-center gap-6 py-4 z-60"
   >
+
       <!-- Facebook -->
       <a href="https://www.facebook.com/iamyomiade/" target="_blank" rel="noopener noreferrer" class="text-gray-300">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 2 24 24"
