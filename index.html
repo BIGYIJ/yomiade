@@ -9,6 +9,8 @@
 <meta name="keywords" content="Yọmí Adé, Yomi Ade, yomiade, yomiademusic, Yomi Adé, Yọmí, Adé, Yọmí Adé Music, Yomi Adeyemi, AfroFusion, Afro-HipHop, Melodic Rap, Yomi Ade Music, Yomi Ade Canberra, Yomi Ade Australia, Nigerian Rapper, Canberra HipHop">
 <meta name="author" content="Yọmí Adé" />
 <meta name="robots" content="index, follow" />
+<!-- Google Search Console Verification -->
+<meta name="google-site-verification=X_if-G7GiKqJfNuGpWf_Z5dfsKLwu4HvGS_SAaSNZB0" />
 <link rel="canonical" href="https://yomiade.com/" />
 
 <!-- FAVICONS & PWA ICONS -->
@@ -24,14 +26,14 @@
 <meta property="og:description" content="AfroFusion | Afro-HipHop | Melodic Rap. Latest release ‘For You’ w/ YungEmmy." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://yomiade.com/" />
-<meta property="og:image" content="https://yomiade.com/assets/images/covers/cover.jpg" />
+<meta property="og:image" content="https://yomiade.com/assets/images/covers/yomi.jpg" />
 <meta property="og:site_name" content="Yọmí Adé" />
 <meta property="og:locale" content="en_US" />
-
+<meta name="image" content="https://yomiade.com/assets/images/covers/yomi.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Yọmí Adé — Official Site" />
 <meta name="twitter:description" content="AfroFusion | Afro-HipHop | Melodic Rap. Latest release ‘For You’ w/ YungEmmy." />
-<meta name="twitter:image" content="https://yomiade.com/assets/images/covers/cover.jpg" />
+<meta name="twitter:image" content="https://yomiade.com/assets/images/covers/yomi.jpg" />
 <meta name="twitter:site" content="@itsyomiade" />
 <meta name="twitter:creator" content="@itsyomiade" />
 
@@ -65,10 +67,37 @@
   {
     "@context": "https://schema.org",
     "@type": ["Person","MusicGroup"],
+    "@id": "https://yomiade.com/#artist",
     "name": "Yọmí Adé",
-    "alternateName": ["Yomi Ade", "BIGYIJ"],
+    "alternateName": ["Yomi Ade", "BIGYIJ", "Yomi Adeyemi"],
+    "description": "Yọmí Adé (aka Yomi Ade, formerly BIGYIJ) is an AfroFusion, Afro-HipHop, and Melodic Rap artist blending Yorùbá heritage, raw lyricism, and soulful production. Born in Philadelphia and raised in Canberra, his music bridges culture and emotion across continents.",
+    "image": "https://yomiade.com/assets/images/covers/yomi.jpg",
     "url": "https://yomiade.com",
     "genre": ["AfroFusion","Afro-HipHop","Melodic Rap"],
+    "birthPlace": {
+      "@type": "Place",
+      "name": "Philadelphia, United States"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Yomi Ade Music",
+      "url": "https://yomiade.com",
+      "logo": "https://yomiade.com/assets/images/icons/favicon-96x96.png",
+      "sameAs": [
+        "https://open.spotify.com/artist/6R2u7VVJLgKvXQwsj9Vmxe",
+        "https://music.apple.com/au/artist/y%E1%BB%8Dm%C3%AD-ad%C3%A9/1708090346"
+      ]
+    },
+    "nationality": {
+      "@type": "Country",
+      "name": "Nigeria"
+    },
+    "memberOf": {
+      "@type": "Organization",
+      "name": "Yomi Ade Music"
+    },
+    "knowsAbout": ["AfroFusion", "HipHop", "Yoruba culture", "Sound production", "Music engineering"],
     "sameAs": [
       "https://linktr.ee/yomiade",
       "https://ffm.bio/yomiade",
@@ -88,7 +117,8 @@
 
 <body x-data="{ navOpen: false, socialOpen: false }" class="bg-black text-white font-body">
   <!-- HEADER -->
-  <header class="fixed top-0 left-0 right-0 z-40 bg-black border-b-4 border-t-4 border-red-700">
+  <header class="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-red-700 via-white/60 to-red-700 animate-pulse">
+    
   <!-- Page dimmer when any menu is open -->
   <div
     x-cloak
@@ -336,6 +366,8 @@
       </svg>
     </a>
   </div>
+  <!-- Gradient Divider (Top Shimmer) -->
+  <div></div>
 </header>
 
 <div class="h-16"></div>  <!--Div class for fixed header-->
