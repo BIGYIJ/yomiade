@@ -64,60 +64,54 @@
 
 <!-- STRUCTURED DATA (JSON-LD) -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": ["Person","MusicGroup"],
-    "@id": "https://yomiade.com/#artist",
-    "name": "Yọmí Adé",
-    "alternateName": ["Yomi Ade", "BIGYIJ", "Yomi Adeyemi"],
-    "description": "Yọmí Adé (aka Yomi Ade, formerly BIGYIJ) is an AfroFusion, Afro-HipHop, and Melodic Rap artist blending Yorùbá heritage, raw lyricism, and soulful production. Born in Philadelphia and raised in Canberra, his music bridges culture and emotion across continents.",
-    "image": "https://yomiade.com/assets/images/covers/yomi.jpg",
-    "url": "https://yomiade.com",
-    "genre": ["AfroFusion","Afro-HipHop","Melodic Rap"],
-    "birthPlace": {
-      "@type": "Place",
-      "name": "Philadelphia, United States"
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Yomi Ade Music",
-      "alternateName": "Yọmí Adé Music",
-      "founder": {
-        "@type": "Person",
-        "name": "Yọmí Adé"
-      },
-      "url": "https://yomiade.com",
-      "logo": "https://yomiade.com/assets/images/icons/favicon-96x96.png",
-      "sameAs": [
-        "https://open.spotify.com/artist/6R2u7VVJLgKvXQwsj9Vmxe",
-        "https://music.apple.com/au/artist/y%E1%BB%8Dm%C3%AD-ad%C3%A9/1708090346"
-      ]
-    },
-    "nationality": {
-      "@type": "Country",
-      "name": "Nigeria"
-    },
-    "memberOf": {
-      "@type": "Organization",
-      "name": "Yomi Ade Music"
-    },
-    "knowsAbout": ["AfroFusion", "HipHop", "Yoruba culture", "Sound production", "Music engineering"],
-    "sameAs": [
-      "https://linktr.ee/yomiade",
-      "https://ffm.bio/yomiade",
-      "https://open.spotify.com/artist/6R2u7VVJLgKvXQwsj9Vmxe",
-      "https://www.youtube.com/channel/UCDiTxncvm4swm_8oB1BH8-g",
-      "https://music.apple.com/au/artist/y%E1%BB%8Dm%C3%AD-ad%C3%A9/1708090346",
-      "https://soundcloud.com/yomiade",
-      "https://x.com/itsyomiade",
-      "https://www.instagram.com/itsyomiade/",
-      "https://www.tiktok.com/@itsyomiade",
-      "https://www.facebook.com/iamyomiade/"
-    ],
-    "email": "mailto:yomiademusic@gmail.com"
-  }
-  </script>
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://yomiade.com/#artist",
+  "name": "Yọmí Adé",
+  "alternateName": ["Yomi Ade", "BIGYIJ", "Yomi Adeyemi"],
+  "url": "https://yomiade.com/",
+  "image": "https://yomiade.com/assets/images/covers/yomi.jpg",
+  "jobTitle": "Musical artist",
+  "description": "Yọmí Adé (aka Yomi Adeyemi, formerly BIGYIJ) is an AfroFusion, Afro-HipHop, and Melodic Rap artist blending Yorùbá heritage, raw lyricism, and soulful production. Born in Philadelphia and raised in Canberra, his music bridges culture and emotion across continents.",
+  "birthPlace": { "@type": "Place", "name": "Philadelphia, United States" },
+  "nationality": { "@type": "Country", "name": "Nigeria" },
+  "memberOf": { "@type": "Organization", "@id": "https://yomiade.com/#org" },
+  "knowsAbout": ["AfroFusion", "HipHop", "Yoruba culture", "Sound production", "Music engineering"],
+  "sameAs": [
+    "https://open.spotify.com/artist/6R2u7VVJLgKvXQwsj9Vmxe",
+    "https://music.apple.com/au/album/pieces-of-me-the-ep-ep/1787360063",
+    "https://www.instagram.com/itsyomiade/",
+    "https://x.com/itsyomiade",
+    "https://www.youtube.com/channel/UCDiTxncvm4swm_8oB1BH8-g",
+    "https://www.tiktok.com/@itsyomiade",
+    "https://yomiade.bandcamp.com/",
+    "https://linktr.ee/yomiade",
+    "https://ffm.bio/yomiade",
+    "https://soundcloud.com/yomiade",
+    "https://www.facebook.com/iamyomiade/"
+  ],
+  "email": "mailto:yomiademusic@gmail.com"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://yomiade.com/#org",
+  "name": "Yomi Ade Music",
+  "alternateName": "Yọmí Adé Music",
+  "url": "https://yomiade.com/",
+  "logo": "https://yomiade.com/assets/images/icons/favicon-96x96.png",
+  "founder": { "@id": "https://yomiade.com/#artist" },
+  "sameAs": [
+    "https://open.spotify.com/artist/6R2u7VVJLgKvXQwsj9Vmxe",
+    "https://music.apple.com/au/artist/y%E1%BB%8Dm%C3%AD-ad%C3%A9/1708090346"
+  ]
+}
+</script>
+
 </head>
 
 <body x-data="{ navOpen: false, socialOpen: false }" class="bg-black text-white font-body">
